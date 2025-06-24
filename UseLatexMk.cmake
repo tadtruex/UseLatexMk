@@ -218,7 +218,7 @@ function(add_latex_document)
   endif()
 
   # Get an absolute path to the source
-  set(LMK_SOURCE_REPLACED ${CMAKE_CURRENT_BINARY_DIR}/${LMK_TARGET}_source.cc)
+  set(LMK_SOURCE_REPLACED ${CMAKE_CURRENT_BINARY_DIR}/${LMK_TARGET}.cc)
   configure_file(${LMK_SOURCE} ${LMK_SOURCE_REPLACED} @ONLY)
 
   # Call the latexmk executable
