@@ -50,6 +50,15 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+set(LATEX_ROOT)
+	foreach(compiler LATEX LUALATEX PDFLATEX XELATEX)
+            if (LATEX_${compiler}_FOUND)
+                get_filename_component(_dir ${${compiler}_COMPILER} DIRECTORY)
+                list(APPEND LATEX_ROOT ${_dir})
+            endif()
+        endforeach()
+
+
 # Find the actual program
 find_program(LATEXMK_EXECUTABLE
              latexmk
